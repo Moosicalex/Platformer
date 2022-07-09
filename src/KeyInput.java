@@ -11,18 +11,17 @@ public class KeyInput extends KeyAdapter{
     public void keyPressed(KeyEvent e){
         int key = e.getKeyCode();
 
-        for(int i = 0; i < handler.object.size(); i++){
-            GameObject tempObject = handler.object.get(i);
+            GameObject tempObject = handler.object.get(1);
 
             if(tempObject.getId() == ID.Player){
 
                 if(key == KeyEvent.VK_UP) tempObject.setVelY(-5);
-                else if(key == KeyEvent.VK_DOWN) tempObject.setVelY(5);
+                //else if(key == KeyEvent.VK_DOWN) tempObject.setVelY(5);
                 else if(key == KeyEvent.VK_LEFT) tempObject.setVelX(-5);
                 else if(key == KeyEvent.VK_RIGHT) tempObject.setVelX(5);
                 else{ tempObject.setVelX(0); tempObject.setVelY(0);}
             }
-        }
+            else{System.out.println("Wrong index for player");}
     }
 
     public void keyReleased(KeyEvent e){
