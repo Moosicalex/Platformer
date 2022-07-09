@@ -15,10 +15,14 @@ import java.applet.*;
 
 public class Player extends GameObject{
     Handler handler;
+    static boolean canJump;
+    static int jumpTimer;
+
     public Player(int x, int y, ID id, Handler handler){
         super(x, y, id);
         this.handler = handler;
-
+        canJump = true;
+        jumpTimer = 0;
         try{
             playerImage = ImageIO.read(getClass().getResourceAsStream("images/player.png"));
           } catch(IOException e) {
@@ -30,6 +34,14 @@ public class Player extends GameObject{
         return new Rectangle(x, y, 48, 40);
       }
 
+    public static void jump(){
+        if(canJump && jumpTimer <=50){
+            velY -= 10;
+            jumpTimer++;
+        }
+        else{canJump = false;}
+    }
+
     public void tick(){
         x += velX;
         y += velY;
@@ -38,9 +50,7 @@ public class Player extends GameObject{
     }
 
     private void collision(){
-        for(int i = 0; i < handler.object.size(); i++){
-            GameObject tempObject = handler.object.get(i);
-        }
+        
     }
 
     private BufferedImage playerImage;

@@ -11,11 +11,11 @@ public class KeyInput extends KeyAdapter{
     public void keyPressed(KeyEvent e){
         int key = e.getKeyCode();
 
-            GameObject tempObject = handler.object.get(1);
+            GameObject tempObject = handler.object.get(0);
 
             if(tempObject.getId() == ID.Player){
 
-                if(key == KeyEvent.VK_UP) tempObject.setVelY(-5);
+                if(key == KeyEvent.VK_UP) Player.jump();
                 //else if(key == KeyEvent.VK_DOWN) tempObject.setVelY(5);
                 else if(key == KeyEvent.VK_LEFT) tempObject.setVelX(-5);
                 else if(key == KeyEvent.VK_RIGHT) tempObject.setVelX(5);
