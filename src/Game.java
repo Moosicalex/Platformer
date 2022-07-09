@@ -61,7 +61,7 @@ public class Game extends Canvas implements Runnable{
             //handler.addObject(new Map(100, 100, ID.Map));
             handler.addObject(new Player(Game.WIDTH/2, Game.HEIGHT/2, ID.Player, handler));
             //handler.addObject(new Platform(Game.WIDTH/2, Game.HEIGHT/2, ID.Platform, handler));
-            handler.addObject(new Full_Platform(Game.WIDTH/3, Game.HEIGHT/3, 100, 20, ID.Full_Platform, handler));
+            handler.addObject(new Full_Platform(Game.WIDTH/2, Game.HEIGHT/2, 100, 20, ID.Full_Platform, handler));
         }
 
     public synchronized void start(){

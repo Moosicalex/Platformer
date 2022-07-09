@@ -30,6 +30,7 @@ public class Full_Platform  extends GameObject{
         super(x, y, id);
         this.height = height;
         this.width = width;
+        this.handler = handler;
 
         this.north.setWidth(width);
         this.north.setX(x);
