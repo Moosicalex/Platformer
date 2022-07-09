@@ -16,12 +16,6 @@ import java.applet.*;
 
 public class Full_Platform  extends GameObject{
     Handler handler;
-    
-    Platform north = new Platform(0, 0, 1, 1, 0, ID.Platform, handler);
-    Platform east = new Platform(0, 0, 1, 1, 1, ID.Platform, handler);
-    Platform south = new Platform(0, 0, 1, 1, 2, ID.Platform, handler);
-    Platform west = new Platform(0, 0, 1, 1, 3, ID.Platform, handler);
-    
 
     int height;
     int width;
@@ -32,25 +26,10 @@ public class Full_Platform  extends GameObject{
         this.width = width;
         this.handler = handler;
 
-        this.north.setWidth(width);
-        this.north.setX(x);
-        this.north.setY(y - height);
-        handler.addObject(north);
-
-        this.south.setWidth(width);
-        this.south.setX(x);
-        this.south.setY(y);
-        handler.addObject(south);
-        
-        this.east.setHeight(height);
-        this.east.setX(x);
-        this.east.setY(y);
-        handler.addObject(east);
-
-        this.west.setHeight(height);
-        this.west.setX(x-width);
-        this.west.setY(y);
-        handler.addObject(west);
+        handler.addObject(new Platform(x, y, width, 1, 0, ID.Platform, handler));
+        handler.addObject(new Platform(x + width, y, 1, height, 1, ID.Platform, handler));
+        handler.addObject(new Platform(x, y + height, width, 1, 2, ID.Platform, handler));
+        handler.addObject(new Platform(x, y, 1, height, 3, ID.Platform, handler));
 
         try{
             dialogueBox = ImageIO.read(getClass().getResourceAsStream("images/dialogueBox.png"));
@@ -67,6 +46,7 @@ public class Full_Platform  extends GameObject{
     
     private BufferedImage dialogueBox;
     public void render(Graphics g){
-        g.drawImage(dialogueBox, x, y, width, height, null);
+      g.setColor(Color.RED);
+      g.drawRect(x, y, width, height);
     }
 }
