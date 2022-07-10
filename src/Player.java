@@ -63,5 +63,7 @@ public class Player extends GameObject{
         g.setColor(Color.BLACK);
         //g.drawRect(x, y, 48, 40);
         g.drawImage(playerImage, x, y, 48, 40, null);
+
+        if(KeyInput.hitBoxes){g.drawRect(x, y, 48, 40);}
     }
 }

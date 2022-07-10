@@ -4,9 +4,10 @@ import java.awt.event.KeyEvent;
 public class KeyInput extends KeyAdapter{
     
     private Handler handler;
-
+    public static boolean hitBoxes;
     public KeyInput(Handler handler){
         this.handler = handler;
+        this.hitBoxes = false;
     }
     public void keyPressed(KeyEvent e){
         int key = e.getKeyCode();
@@ -19,6 +20,7 @@ public class KeyInput extends KeyAdapter{
                 //else if(key == KeyEvent.VK_DOWN) tempObject.setVelY(5);
                 else if(key == KeyEvent.VK_LEFT) tempObject.setVelX(-5);
                 else if(key == KeyEvent.VK_RIGHT) tempObject.setVelX(5);
+                else if(key == KeyEvent.VK_M) this.hitBoxes = !hitBoxes;
                 else{ tempObject.setVelX(0); tempObject.setVelY(0);}
             }
             else{System.out.println("Wrong index for player");}

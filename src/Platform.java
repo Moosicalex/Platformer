@@ -63,6 +63,6 @@ public class Platform extends GameObject{
 
     public void render(Graphics g){
         g.setColor(Color.BLACK);
-        g.drawRect(x, y, width, height);
+        if(KeyInput.hitBoxes){g.drawRect(x, y, width, height);}
     }
 }
