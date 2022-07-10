@@ -35,11 +35,16 @@ public class Player extends GameObject{
       }
 
     public static void jump(){
-        if(canJump && jumpTimer <=50){
-            velY -= 10;
+        if(canJump && jumpTimer <= 7){
+            velY = -10;
             jumpTimer++;
+            System.out.println(jumpTimer);
         }
-        else{canJump = false;}
+        else{
+            canJump = false;
+            jumpTimer = 0;
+            velY = 0;
+        }
     }
 
     public void tick(){
