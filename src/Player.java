@@ -35,7 +35,7 @@ public class Player extends GameObject{
       }
 
     public static void jump(){
-        if(canJump && jumpTimer <= 7){
+        if(canJump && jumpTimer <= 3){
             velY = -10;
             jumpTimer++;
             System.out.println(jumpTimer);

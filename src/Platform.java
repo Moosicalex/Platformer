@@ -53,7 +53,7 @@ public class Platform extends GameObject{
                 2 = south
                 3 = west
                 */
-                if(this.face == 0){tempObject.y -= 5; Player.canJump = true;}
+                if(this.face == 0){tempObject.y -= 5; Player.canJump = true; Player.jumpTimer = 0;}
                 else if(this.face == 1){tempObject.x += 5;}
                 else if(this.face == 2){tempObject.y += 5;}
                 else if(this.face == 3){tempObject.x -= 5;}

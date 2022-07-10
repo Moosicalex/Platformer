@@ -58,10 +58,9 @@ public class Game extends Canvas implements Runnable{
 
             new Window(WIDTH, HEIGHT, "Platformer", this);
 
-            //handler.addObject(new Map(100, 100, ID.Map));
             handler.addObject(new Player(Game.WIDTH/2, Game.HEIGHT/2, ID.Player, handler));
-            //handler.addObject(new Platform(Game.WIDTH/2, Game.HEIGHT/2, ID.Platform, handler));
             handler.addObject(new Full_Platform(0, Game.HEIGHT - 100, WIDTH, HEIGHT, ID.Full_Platform, handler));
+            handler.addObject(new Full_Platform(100, Game.HEIGHT - 250, 100, 100, ID.Full_Platform, handler));
         }
 
     public synchronized void start(){
@@ -107,7 +106,7 @@ public class Game extends Canvas implements Runnable{
          
          if(System.currentTimeMillis() - timer > 1000){
            timer += 1000;
-           System.out.println("FPS: " + frames);
+           //System.out.println("FPS: " + frames);
            frames = 0;
          }
        }
