@@ -61,6 +61,7 @@ public class Game extends Canvas implements Runnable{
             handler.addObject(new Player(Game.WIDTH/2, Game.HEIGHT/2, ID.Player, handler));
             handler.addObject(new Full_Platform(0, Game.HEIGHT - 100, WIDTH, HEIGHT, ID.Full_Platform, handler));
             handler.addObject(new Full_Platform(100, Game.HEIGHT - 250, 100, 100, ID.Full_Platform, handler));
+            handler.addObject(new Full_Platform(400, Game.HEIGHT - 350, 100, 100, ID.Full_Platform, handler));
         }
 
     public synchronized void start(){
