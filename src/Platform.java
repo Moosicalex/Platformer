@@ -54,9 +54,9 @@ public class Platform extends GameObject{
                 3 = west
                 */
                 if(this.face == 0){tempObject.y -= 5; Player.canJump = true; Player.jumpTimer = 0; Player.jumping = false;}
-                else if(this.face == 1){tempObject.x += 5;}
-                else if(this.face == 2){tempObject.y += 5;}
-                else if(this.face == 3){tempObject.x -= 5;}
+                if(this.face == 1){tempObject.x += 5; tempObject.y += 1; Player.canJump = true; Player.jumpTimer = 0; Player.jumping = false;}
+                else if(this.face == 2){tempObject.y += 5; }
+                else if(this.face == 3){tempObject.x -= 5; tempObject.y -= 1; Player.canJump = true; Player.jumpTimer = 0; Player.jumping = false;}
             }
         }
     }

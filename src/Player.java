@@ -27,6 +27,8 @@ public class Player extends GameObject{
         jumpTimer = 0;
         try{
             playerImage = ImageIO.read(getClass().getResourceAsStream("images/player.png"));
+            playerEastWallImage = ImageIO.read(getClass().getResourceAsStream("images/playerEastWall.png"));
+            playerWestWallImage = ImageIO.read(getClass().getResourceAsStream("images/playerWestWall.png"));
           } catch(IOException e) {
              e.printStackTrace();
            }
@@ -39,8 +41,8 @@ public class Player extends GameObject{
     public static void jump(){
         if(canJump && jumpTimer <= 3){
             jumping = true;
-            velY = -10;
             jumpTimer++;
+            velY = -10;
             System.out.println(jumpTimer);
         }
         else{
@@ -60,7 +62,15 @@ public class Player extends GameObject{
         
     }
 
+    enum positionState {
+        west,
+        none,
+        east
+    }
+
     private BufferedImage playerImage;
+    private BufferedImage playerEastWallImage;
+    private BufferedImage playerWestWallImage;
     public void render(Graphics g){
         g.setColor(Color.BLACK);
         //g.drawRect(x, y, 48, 40);
