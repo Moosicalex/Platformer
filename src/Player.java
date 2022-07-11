@@ -16,12 +16,14 @@ import java.applet.*;
 public class Player extends GameObject{
     Handler handler;
     static boolean canJump;
+    static boolean jumping;
     static int jumpTimer;
 
     public Player(int x, int y, ID id, Handler handler){
         super(x, y, id);
         this.handler = handler;
         canJump = true;
+        jumping = false;
         jumpTimer = 0;
         try{
             playerImage = ImageIO.read(getClass().getResourceAsStream("images/player.png"));
@@ -36,13 +38,13 @@ public class Player extends GameObject{
 
     public static void jump(){
         if(canJump && jumpTimer <= 3){
+            jumping = true;
             velY = -10;
             jumpTimer++;
             System.out.println(jumpTimer);
         }
         else{
             canJump = false;
-            jumpTimer = 0;
             velY = 0;
         }
     }

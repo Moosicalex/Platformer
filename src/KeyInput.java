@@ -18,8 +18,8 @@ public class KeyInput extends KeyAdapter{
 
                 if(key == KeyEvent.VK_UP) Player.jump();
                 //else if(key == KeyEvent.VK_DOWN) tempObject.setVelY(5);
-                else if(key == KeyEvent.VK_LEFT) tempObject.setVelX(-5);
-                else if(key == KeyEvent.VK_RIGHT) tempObject.setVelX(5);
+                else if(key == KeyEvent.VK_LEFT && !Player.jumping) tempObject.setVelX(-5);
+                else if(key == KeyEvent.VK_RIGHT && !Player.jumping) tempObject.setVelX(5);
                 else if(key == KeyEvent.VK_M) this.hitBoxes = !hitBoxes;
                 else{ tempObject.setVelX(0); tempObject.setVelY(0);}
             }
@@ -33,12 +33,12 @@ public class KeyInput extends KeyAdapter{
 
             if(tempObject.getId() == ID.Player){
 
-                if(key == KeyEvent.VK_UP){Player.canJump = false; Player.jumpTimer = 4; tempObject.setVelY(0);} 
+                if(key == KeyEvent.VK_UP){Player.canJump = false; Player.jumpTimer = 5; tempObject.setVelY(0);} 
                 //else if(key == KeyEvent.VK_DOWN) tempObject.setVelY(5);
-                else if(key == KeyEvent.VK_LEFT) tempObject.setVelX(0);
-                else if(key == KeyEvent.VK_RIGHT) tempObject.setVelX(0);
+                else if(key == KeyEvent.VK_LEFT && !Player.jumping) tempObject.setVelX(0);
+                else if(key == KeyEvent.VK_RIGHT && !Player.jumping) tempObject.setVelX(0);
                 else if(key == KeyEvent.VK_M) this.hitBoxes = !hitBoxes;
-                else{tempObject.setVelX(0); tempObject.setVelY(0);}
+                else{}
             }
             else{System.out.println("Wrong index for player");}
       }

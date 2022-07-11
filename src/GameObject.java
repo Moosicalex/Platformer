@@ -7,7 +7,7 @@ public abstract class GameObject {
     //protected varaibles are able to be inherited by the other object classes 
   protected int x, y;
   protected ID id;
-  protected int velX;
+  protected static int velX;
   protected static int velY;
 
   public GameObject(int x, int y, ID id){
